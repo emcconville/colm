@@ -77,7 +77,7 @@ function cat_section
 	local in=$3
 
 	# Print Nth instance of the section
-	awk -vsection=$section -vnth=$nth '
+	awk -v "section=$section" -v "nth=$nth" '
 		/#+ *[a-zA-Z]+ *#+/ {
 			gsub( "[ #\n]", "", $0 );
 			in_section = 0
